@@ -126,9 +126,10 @@
   /* POETICA: franja de menú negra a todo el ancho, debajo del logo centrado */
   @media screen and (min-width: 990px) {
     .header--top-center .header__inline-menu {
-      width: 100vw;
-      margin-left: 50%;
-      transform: translateX(-50%);
+      justify-self: stretch;
+      width: auto;
+      margin-left: 0;
+      transform: none;
       background-color: #000000;
     }
 
@@ -232,7 +233,7 @@
         {%- else -%}
           {%- comment -%} logo-poetica.png es 1418x591px (aspect ratio ~2.4) {%- endcomment -%}
           {%- assign fallback_logo_height = settings.logo_width | divided_by: 2.4 | round -%}
-          <div class="header__heading-logo-wrapper">
+          <div class="header__heading-logo-wrapper" style="width: {{ settings.logo_width }}px;">
             <img
               src="{{ 'logo-poetica.png' | asset_url }}"
               alt="{{ shop.name | escape }}"
